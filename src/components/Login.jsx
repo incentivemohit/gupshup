@@ -21,13 +21,29 @@ function Login() {
       navigate("/");
     } catch (err) {
       setErr(err);
+      setTimeout(() => {
+        setErr(false);
+      }, 2000);
     }
   };
 
   return (
     <>
-      <div id="login-container">
-        {err && <span>Something gone wrong!!</span>}
+      {err ? (
+        <div
+          class="alert alert-danger text-center position-fixed w-100"
+          style={{ zIndex: "1" }}
+          role="alert"
+        >
+          User doesn't exists!!
+        </div>
+      ) : (
+        ""
+      )}
+      <div
+        style={{ height: "100vh" }}
+        className="container-fluid  d-flex justify-content-center  align-items-center vh-100 bg-dark"
+      >
         <div className="card" style={{ width: "400px" }}>
           <form onSubmit={handleSubmit} className="form-group card-body">
             <h3 className="text-center">Whatsapp</h3>

@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const [err, setErr] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
 
@@ -59,19 +60,49 @@ function Register() {
             });
 
             await setDoc(doc(db, "userChats", res.user.uid), {});
+            setTimeout(() => {
+              setSuccess(true);
+            }, 2000);
             navigate("/login");
           });
         }
       );
     } catch (err) {
       setErr(true);
+      setTimeout(() => {
+        setErr(false);
+      }, 4000);
     }
   };
 
   return (
     <>
-      <div id="register-container">
-        {err && <span>Something gone wrong!!</span>}
+      {err ? (
+        <div
+          class="alert alert-danger text-center position-fixed w-100"
+          style={{ zIndex: "1" }}
+          role="alert"
+        >
+          Oops !! User Already Registered ! Please try again
+        </div>
+      ) : (
+        ""
+      )}
+      {success ? (
+        <div
+          class="alert alert-danger text-center position-fixed w-100"
+          style={{ zIndex: "1" }}
+          role="alert"
+        >
+          Registration Successfull
+        </div>
+      ) : (
+        ""
+      )}
+      <div
+        style={{ height: "100vh" }}
+        className="container-fluid  d-flex justify-content-center  align-items-center vh-100 bg-dark"
+      >
         <div className="card" style={{ width: "400px" }}>
           <form onSubmit={handleSubmit} className="form-group card-body">
             <h3 className="text-center">Whatsapp</h3>

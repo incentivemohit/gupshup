@@ -1,11 +1,20 @@
-import React from "react";
 import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+import React from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
 import { AuthContext } from "../Context/AuthContext";
 
 function Top() {
   const { currentUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    signOut(auth);
+    navigate("/login ");
+  };
 
   return (
     <>
@@ -24,11 +33,9 @@ function Top() {
 
         <div className="col-md-4 d-flex align-items-center justify-content-end">
           <div className="top-right ">
-            <a href="/login">
-              <button className="btn btn-warning" onClick={() => signOut(auth)}>
-                Logout
-              </button>
-            </a>
+            <button className="btn btn-warning" onClick={handleLogout}>
+              Logout
+            </button>
           </div>
         </div>
       </div>

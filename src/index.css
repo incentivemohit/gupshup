@@ -25,7 +25,11 @@ body {
 .messages {
   overflow-y: auto;
   flex-direction: column;
-  margin-left: 10px;
+  padding-left: 10px;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  background-image: url("./../public/assets/images/peakpx.jpg");
 }
 .owner {
   flex-direction: row-reverse;
@@ -45,4 +49,11 @@ body {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .gupshup-container {
+    width: 75%;
+    height: 90vh;
+  }
 }

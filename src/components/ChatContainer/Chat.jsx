@@ -1,12 +1,11 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ChatContext } from "../Context/ChatContext";
 import Input from "./Input";
 import Messages from "./Messages";
 
 function Chat() {
   const { data } = useContext(ChatContext);
-  const [value, setValue] = useState(false);
 
   return (
     <>

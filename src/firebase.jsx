@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBKuAAbafkyT85NpM0tbbkzPl2fVmf1bbw",
-  authDomain: "whatsapp-5d4f9.firebaseapp.com",
-  projectId: "whatsapp-5d4f9",
-  storageBucket: "whatsapp-5d4f9.appspot.com",
-  messagingSenderId: "817794252615",
-  appId: "1:817794252615:web:9657fb5148442febc09662",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
