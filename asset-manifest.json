@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/gupshup/static/css/main.04b76d1d.css",
-    "main.js": "/gupshup/static/js/main.e74ae4ad.js",
+    "main.js": "/gupshup/static/js/main.c03fdce4.js",
     "static/media/peakpx.jpg": "/gupshup/static/media/peakpx.2c0198ac39dd19241f53.jpg",
     "index.html": "/gupshup/index.html",
     "main.04b76d1d.css.map": "/gupshup/static/css/main.04b76d1d.css.map",
-    "main.e74ae4ad.js.map": "/gupshup/static/js/main.e74ae4ad.js.map"
+    "main.c03fdce4.js.map": "/gupshup/static/js/main.c03fdce4.js.map"
   },
   "entrypoints": [
     "static/css/main.04b76d1d.css",
-    "static/js/main.e74ae4ad.js"
+    "static/js/main.c03fdce4.js"
   ]
 }
